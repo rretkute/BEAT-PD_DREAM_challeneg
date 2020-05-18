@@ -21,13 +21,6 @@ indC<-unique(idsC[,2])
 idsR<-read.csv("real-pd.REAL-PD_Test_Data_IDs.csv", colClasses="character")
 indR<-unique(idsR[,2])
 
-idsCA<-read.csv("data_labels/CIS-PD_Ancillary_Data_IDs_Labels.csv", colClasses="character")
-indCA<-unique(idsCA[,2])
-
-idsRA<-read.csv("data_labels/REAL-PD_Ancillary_Data_IDs_Labels.csv", colClasses="character")
-indRA<-unique(idsRA[,2])
-
-
 # data labels
 datlabC<-read.csv("data_labels/CIS-PD_Training_Data_IDs_Labels.csv", colClasses="character")
 datlabC[,3]<-as.numeric(datlabC[,3]); datlabC[,4]<-as.numeric(datlabC[,4]); datlabC[,5]<-as.numeric(datlabC[,5])
