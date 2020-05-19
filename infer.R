@@ -83,7 +83,7 @@ predict_cis_pd<-function(info, chall, m.add, p.add, brks){
       n.trees = n.trees,
       interaction.depth = interaction.depth,
       n.minobsinnode = 3,
-      verbose = TRUE
+      verbose = FALSE
     )  
     pred<-pmin(pmax(predict(fit.model, as.data.frame(test), n.trees=n.trees, type='response'),0),4)
   }  else {
@@ -94,7 +94,7 @@ predict_cis_pd<-function(info, chall, m.add, p.add, brks){
       n.trees = n.trees,
       interaction.depth = interaction.depth,
       n.minobsinnode = 3,
-      verbose = TRUE
+      verbose = FALSE
     )  
     pred<-pmin(pmax(predict(fit.model, as.data.frame(test), n.trees=n.trees, type='response'),0),4)
   }
@@ -137,7 +137,7 @@ predict_real_pd<-function(info, chall, m.add, p.add, brks.R1, brks.R2, brks.R3){
       n.trees = n.trees,
       interaction.depth = interaction.depth,
       n.minobsinnode = 3,
-      verbose = TRUE
+      verbose = FALSE
     )  
     pred<-pmin(pmax(predict(fit.model, as.data.frame(test), n.trees=n.trees, type='response'),0),4)
   } else {
@@ -148,7 +148,7 @@ predict_real_pd<-function(info, chall, m.add, p.add, brks.R1, brks.R2, brks.R3){
       n.trees = n.trees,
       interaction.depth = interaction.depth,
       n.minobsinnode = 3,
-      verbose = TRUE
+      verbose = FALSE
     )  
     fit.model.R2 <- gbm(
       formula = label ~ .,
@@ -157,7 +157,7 @@ predict_real_pd<-function(info, chall, m.add, p.add, brks.R1, brks.R2, brks.R3){
       n.trees = n.trees,
       interaction.depth = interaction.depth,
       n.minobsinnode = 3,
-      verbose = TRUE
+      verbose = FALSE
     )  
     fit.model.R3 <- gbm(
       formula = label ~ .,
@@ -166,7 +166,7 @@ predict_real_pd<-function(info, chall, m.add, p.add, brks.R1, brks.R2, brks.R3){
       n.trees = n.trees,
       interaction.depth = interaction.depth,
       n.minobsinnode = 3,
-      verbose = TRUE
+      verbose = FALSE
     )  
     pred<-pmin(pmax(mean(c(predict(fit.model.R1, as.data.frame(tst.R1), n.trees=n.trees, type='response'), predict(fit.model.R2, as.data.frame(tst.R2), n.trees=n.trees, type='response'), predict(fit.model.R3, as.data.frame(tst.R3), n.trees=n.trees, type='response'))),0),4)
   }
