@@ -73,6 +73,7 @@ for(ii in 1:nrow(test)){
   if(info[[2]]==1){
     pred<-predict_cis_pd(info, chall, m.add, p.add, brks)
     test[ii,2]<-pred
+    cat(c(ii, "", info[[3]], pred, "\n"))
   }
   if(info[[2]]==2){
     pred<-predict_real_pd(info, chall, m.add, p.add, brks.R1, brks.R2, brks.R3)
@@ -99,6 +100,7 @@ for(ii in 1:nrow(test)){
   if(info[[2]]==1){
     pred<-predict_cis_pd(info, chall, m.add, p.add, brks)
     test[ii,2]<-pred
+    cat(c(ii, "", info[[3]], pred, "\n"))
   }
   if(info[[2]]==2){
     pred<-predict_real_pd(info, chall, m.add, p.add, brks.R1, brks.R2, brks.R3)
@@ -125,6 +127,7 @@ for(ii in 1:nrow(test)){
   if(info[[2]]==1){
     pred<-predict_cis_pd(info, chall, m.add, p.add, brks)
     test[ii,2]<-pred
+    cat(c(ii, "", info[[3]], pred, "\n"))
   }
   if(info[[2]]==2){
     pred<-predict_real_pd(info, chall, m.add, p.add, brks.R1, brks.R2, brks.R3)
